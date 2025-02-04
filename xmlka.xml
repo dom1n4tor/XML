@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE timeTable [
+  <!ELEMENT timeTable (complexes, lessons)>
+  <!ELEMENT complexes (complex+)>
+  <!ELEMENT complex (name, address)>
+  <!ATTLIST complex code ID #REQUIRED>
+  <!ELEMENT lessons (lesson+)>
+  <!ELEMENT lesson (date, time)>
+  <!ATTLIST lesson no CDATA #REQUIRED>
+  <!ATTLIST lesson complex IDREF #REQUIRED>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT time (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT address (#PCDATA)>
+]>
+<timeTable>
+  <complexes>
+    <complex code="C001">
+      <name>Комплекс A</name>
+      <address>Бесполезная ул., д. 4</address>
+    </complex>
+    <complex code="C002">
+      <name>Комплекс B</name>
+      <address>Молодежная ул., д. 2</address>
+    </complex>
+  </complexes>
+  <lessons>
+    <lesson no="1" complex="C001">
+      <date>21.11.2022</date>
+      <time>14:00</time>
+    </lesson>
+    <lesson no="2" complex="C002">
+      <date>23.12.2022</date>
+      <time>15:00</time>
+    </lesson>
+  </lessons>
+</timeTable>
